@@ -1,27 +1,42 @@
 # DistribuidoraNaturalmente
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+Este proyecto es una distribuidora de alimentos naturales, se compone de una landing page donde tenemos una sección de ofertas, otra de recetas con los productos ofrecidos, un formulario de contacto y por último el acceso a la tienda.
 
-## Development server
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Desarrollo de secciones 
 
-## Code scaffolding
+### Ofertas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+La misma cuenta con un carrousel de imagenes, sin exponer los precios, y al presionar sobre ellas redirige a dicha sección en la tienda.
 
-## Build
+### Recetas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Esta sección cuenta con la colaboración de las marcas ofrecidas en la distribuidora, ellos crean las recetas que se exponen en esta sección.
 
-## Running unit tests
+## Tienda
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+La tienda es únicamente para usuarios registrados.
+Las cards tienen un carrousel con dos fotos, una descripción corta, un selector para la cantidad de producto seleccionado y un botón de agregar al carrito.
+Los productos expuestos en la tienda están divididos por marcas y por productos secos y congelados. 
 
-## Running end-to-end tests
+## Carrito de compras
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+El carrito muestra los productos seleccionados junto con el valor unitario y el valor total, un botón de seguir comprando y uno de finalizar la compra. 
+Al finalizar la compra se envía por email un detalle de la compra, estilo remito, para el cliente y una copia a la distribuidora para el proseso de armado y facturación del pedido.
 
-## Further help
+## Login / Logout
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para el registro de usuarios se usa un formulario con los siguientes datos:
+
+- Nombre y apellido *
+- Cuit
+- Nombre del Local *
+- Direccion *
+- Horario de entrega *
+- Telefono de contacto *
+- Email *
+- Instagram
+
+Los datos con * son de caracter obligatorio, necesarios para la generación de una clave de acceso a la tienda y para la entrega de la mercadería.
+Una vez recibido el nuevo registro, la distribuidora debe aceptar al nuevo usuario y generar una clave de acceso a la tienda.
