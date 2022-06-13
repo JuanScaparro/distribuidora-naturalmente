@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg nav-style">
   <div class="container-fluid nav-style">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/">
       <img src="./assets/img/natu-logo.png" class="img-fluid" alt="" width="250" height="150">
     </a>
     <button class="navbar-toggler nav-style" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,19 +9,19 @@
     <div class="collapse navbar-collapse content-buttons" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-md-12 d-flex justify-content-end nav-style">
         <li class="nav-item">
-          <a class="nav-link nav-style" aria-current="page" href="#">Inicio</a>
+          <a class="nav-link nav-style" aria-current="page" routerLink="/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-style" href="#">Recetas</a>
+          <a class="nav-link nav-style" routerLink="/recetas">Recetas</a>
         </li>
         <li class="nav-item dropdown nav-style">
-          <a class="nav-link dropdown-toggle nav-style" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Loggin
+          <a class="nav-link dropdown-toggle nav-style" routerLink="/login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
           </a>
           <ul class="dropdown-menu nav-style" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item nav-style" href="#">Tienda</a></li>
+            <li><a class="dropdown-item nav-style" routerLink="/tienda">Tienda</a></li>
             <li><hr class="dropdown-divider nav-style"></li>
-            <li><a class="dropdown-item nav-style" href="#">Carrito</a></li>
+            <li><a class="dropdown-item nav-style" routerLink="/carrito">Carrito</a></li>
           </ul>
         </li>
       </ul>
