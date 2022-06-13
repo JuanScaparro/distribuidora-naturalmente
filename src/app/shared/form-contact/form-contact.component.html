@@ -1,1 +1,23 @@
-<p>form-contact works!</p>
+<div class="container">
+  <p>{{ firstName.value }}</p>
+  
+  <form class="row">
+    <div class="mb-3 col-6">
+      <label for="firstName" class="form-label">Nombre</label>
+      <input id="firstName" [formControl]="firstName" class="form-control form-control-sm" type="text" placeholder="Nombre" aria-label=".form-control-sm example">
+    </div>
+    <div class="mb-3 col-6">
+      <label for="exampleInput1" class="form-label">Apellido</label>
+      <input class="form-control form-control-sm" type="text" placeholder="Apellido" aria-label=".form-control-sm example">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email</label>
+      <input type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="tunombre@ejemplo.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
+      <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-form">Enviar</button>
+  </form>
+</div>

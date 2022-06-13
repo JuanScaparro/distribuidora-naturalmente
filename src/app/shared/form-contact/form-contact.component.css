@@ -1,0 +1,14 @@
+.container {
+  width: 60%;
+}
+
+.btn-form {
+  width: 50%;
+  border: 1px solid antiquewhite;
+  color: antiquewhite;
+}
+
+.btn-form:hover {
+  color: aliceblue;
+  
+}

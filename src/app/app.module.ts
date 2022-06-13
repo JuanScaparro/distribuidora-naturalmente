@@ -1,16 +1,25 @@
+// EXTERNAL
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
+// MODULES
+import { SharedModule } from './shared/shared.module';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StoreComponent } from './pages/store/store.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { CartComponent } from './pages/cart/cart.component';
-import { FormContactComponent } from './shared/form-contact/form-contact.component';
 import { LoginComponent } from './pages/login/login.component';
+
+// SERVICES
+
+
+// PIPES
+
 
 const routes: Routes = [
   {
@@ -42,17 +51,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    HomeComponent,
     StoreComponent,
     RecipesComponent,
     CartComponent,
-    FormContactComponent,
     LoginComponent
   ],
   imports: [
     BrowserModule,
+    SharedModule,
+    ReactiveFormsModule,
     RouterModule.forRoot( routes )
   ],
   providers: [],
