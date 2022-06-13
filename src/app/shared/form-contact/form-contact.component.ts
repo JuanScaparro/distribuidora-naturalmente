@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
+import { ContactService } from '../../services/contact.service';
 import { take } from 'rxjs';
 
 @Component({
@@ -9,15 +10,41 @@ import { take } from 'rxjs';
 })
 export class FormContactComponent implements OnInit {
 
-  public firstName: FormControl;
+  public contactForm: FormGroup
 
-  constructor() {
-    this.firstName = new FormControl('Juan');
+  public result: string = ''
 
+  constructor( private contactService: ContactService) {
+    this.contactForm = new FormGroup({})
   }
 
   ngOnInit(): void {
-    this.firstName.valueChanges.pipe( ).subscribe(name => console.log(name))
+    this.buildForm();
+  }
+
+  private buildForm() {
+    this.contactForm = new FormGroup({
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      email: new FormControl(''),
+      textArea: new FormControl(''),
+    })
+  }
+
+  public onSubmit() {
+    console.log(this.contactForm.value)
+
+    const { firstName, lastName } = this.contactForm.value
+
+    this.contactService.postForm(this.contactForm.value).then(res => {
+      if(res.id) {
+        this.result = `Gracias ${firstName} ${lastName} por contactarnos!`
+      } else {
+        this.result = `Oooops! ${firstName} ${lastName} lo lamentamos, pero hubo un error. Intentalo nuevamente!`
+      }
+    }).catch( e =>  this.result = `Oooops! Nuestros servidores son una mierda`  )
+
+
   }
 
 }
