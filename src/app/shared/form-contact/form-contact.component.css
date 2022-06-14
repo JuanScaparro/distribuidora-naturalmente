@@ -1,14 +1,33 @@
 .container {
   width: 60%;
+  padding: 15px;
+  background-color: #6e6b6b;
+  box-shadow: 0px 0px 50px 0px rgba(236, 235, 235, 0.336);
+}
+
+.form-label {
+  line-height: 2px;
+}
+
+.form-input {
+  background-color: rgba(250, 235, 215, 0.301);
+  border: antiquewhite solid 1px;
+  color: white;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.479);
 }
 
 .btn-form {
   width: 50%;
   border: 1px solid antiquewhite;
   color: antiquewhite;
+  margin: auto;
 }
 
 .btn-form:hover {
-  color: aliceblue;
-  
+  color: #666161;
+  background-color: antiquewhite;
+  transition-duration: 1000ms;
 }

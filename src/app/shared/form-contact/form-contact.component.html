@@ -1,25 +1,23 @@
 <div class="container">
-  
   <form class="row" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="mb-3 col-6">
       <label for="firstName" class="form-label">Nombre</label>
-      <input id="firstName" formControlName="firstName" class="form-control form-control-sm" type="text" placeholder="Nombre" aria-label=".form-control-sm example">
+      <input id="firstName" formControlName="firstName" class="form-control form-control-sm form-input" type="text" placeholder="Nombre" aria-label=".form-control-sm example">
     </div>
     <div class="mb-3 col-6">
       <label for="lastName" class="form-label">Apellido</label>
-      <input id="lastName" formControlName="lastName" class="form-control form-control-sm" type="text" placeholder="Apellido" aria-label=".form-control-sm example">
+      <input id="lastName" formControlName="lastName" class="form-control form-control-sm form-input" type="text" placeholder="Apellido" aria-label=".form-control-sm example">
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
-      <input id="email" formControlName="email" type="email" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="tunombre@ejemplo.com">
+      <input id="email" formControlName="email" type="email" class="form-control form-control-sm form-input" id="exampleFormControlInput1" placeholder="tunombre@ejemplo.com">
     </div>
     <div class="mb-3">
       <label for="textarea" class="form-label">Comentario</label>
-      <textarea id="textarea" formControlName="textArea" class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea id="textarea" formControlName="textArea" class="form-control form-control-sm form-input" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <button type="submit" class="btn btn-form">Enviar</button>
   </form>
   <div class="mt-2 mb-1">
-   <h6>{{result}}</h6>  
   </div>
 </div>
