@@ -3,18 +3,30 @@
     <div class="mb-3 col-6">
       <label for="firstName" class="form-label">Nombre</label>
       <input id="firstName" formControlName="firstName" class="form-control form-control-sm form-input" type="text" placeholder="Nombre" aria-label=".form-control-sm example">
+      <div *ngIf="contactForm.controls['firstName'].errors && contactForm.controls['firstName'].dirty">
+        <p class="color-required">Nombre requerido.</p>
+      </div>
     </div>
     <div class="mb-3 col-6">
       <label for="lastName" class="form-label">Apellido</label>
       <input id="lastName" formControlName="lastName" class="form-control form-control-sm form-input" type="text" placeholder="Apellido" aria-label=".form-control-sm example">
+      <div *ngIf="contactForm.controls['lastName'].errors  && contactForm.controls['lastName'].dirty">
+        <p class="color-required">Apellido requerido.</p>
+      </div>
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
       <input id="email" formControlName="email" type="email" class="form-control form-control-sm form-input" id="exampleFormControlInput1" placeholder="tunombre@ejemplo.com">
+      <div *ngIf="contactForm.controls['email'].errors  && contactForm.controls['email'].dirty">
+        <p class="color-required">Email requerido.</p>
+      </div>
     </div>
     <div class="mb-3">
       <label for="textarea" class="form-label">Comentario</label>
       <textarea id="textarea" formControlName="textArea" class="form-control form-control-sm form-input" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <div *ngIf="contactForm.controls['textArea'].errors && contactForm.controls['textArea'].dirty">
+        <p class="color-required">Mensaje requerido.</p>
+      </div>
     </div>
     <button type="submit" class="btn btn-form">Enviar</button>
   </form>

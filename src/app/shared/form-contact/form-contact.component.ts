@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
 import { ContactService } from '../../services/contact.service';
@@ -26,17 +26,17 @@ export class FormContactComponent implements OnInit {
 
   private buildForm() {
     this.contactForm = new FormGroup({
-      firstName: new FormControl(''),
-      lastName: new FormControl(''),
-      email: new FormControl(''),
-      textArea: new FormControl(''),
+      firstName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      textArea: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(140)]),
     });
   };
 
   public onSubmit() {
     const { firstName, lastName } = this.contactForm.value;
     this.contactService.postForm( this.contactForm.value ).then( response => {
-      if( response.id ) {
+      if(  this.contactForm.valid && response.id ) {
         this.result = Swal.fire({
                         position: 'bottom-end',
                         icon: 'success',
@@ -44,11 +44,12 @@ export class FormContactComponent implements OnInit {
                         showConfirmButton: false,
                         timer: 2500,
                       })
+        this.buildForm()
       } else {
         this.result = Swal.fire({
                         position: 'bottom-end',
                         icon: 'error',
-                        title: `Oooops! ${ firstName } ${ lastName } lo lamentamos, pero hubo un error. Intentalo nuevamente!`,
+                        title: `Oooops! lo lamentamos, completa todos los campos e intentalo nuevamente!`,
                         showConfirmButton: false,
                         timer: 2500,
                       })
@@ -61,5 +62,9 @@ export class FormContactComponent implements OnInit {
                                       timer: 2500
                                     }) );
   };
+
+  public getName( firstName: string) {
+    return firstName
+  }
 
 };

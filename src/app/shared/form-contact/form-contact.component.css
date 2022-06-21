@@ -31,3 +31,7 @@
   background-color: antiquewhite;
   transition-duration: 1000ms;
 }
+
+.color-required {
+  color: #ff0000;
+}
