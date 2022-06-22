@@ -4,6 +4,10 @@ import Swal from 'sweetalert2';
 
 import { ContactService } from '../../services/contact.service';
 
+import { ErrorMessages, FieldLabels, ModalMessages } from 'src/app/utils/constants';
+import { hasFieldError } from 'src/app/utils/forms';
+
+
 @Component({
   selector: 'app-form-contact',
   templateUrl: './form-contact.component.html',
@@ -14,9 +18,13 @@ export class FormContactComponent implements OnInit {
 
   public contactForm: FormGroup;
 
-  public result: Object = {};
+  public errorMessages: any; 
+  public fieldLabels: any;
+
 
   constructor( private contactService: ContactService ) {
+    this.errorMessages = ErrorMessages;
+    this.fieldLabels = FieldLabels;
     this.contactForm = new FormGroup({});
   };
 
@@ -37,34 +45,35 @@ export class FormContactComponent implements OnInit {
     const { firstName, lastName } = this.contactForm.value;
     this.contactService.postForm( this.contactForm.value ).then( response => {
       if(  this.contactForm.valid && response.id ) {
-        this.result = Swal.fire({
+        Swal.fire({
                         position: 'bottom-end',
                         icon: 'success',
-                        title: `Gracias ${ firstName } ${ lastName } por contactarnos!`,
+                        title: ModalMessages.SUCCESS.replace('#username', `${firstName} ${lastName}`),
                         showConfirmButton: false,
                         timer: 2500,
                       })
         this.buildForm()
       } else {
-        this.result = Swal.fire({
+        Swal.fire({
                         position: 'bottom-end',
                         icon: 'error',
-                        title: `Oooops! lo lamentamos, completa todos los campos e intentalo nuevamente!`,
+                        title: ModalMessages.ERROR_VALIDATION,
                         showConfirmButton: false,
                         timer: 2500,
                       })
       }
-    }).catch( err =>  this.result = Swal.fire({
+    }).catch( err => Swal.fire({
                                       position: 'bottom-end',
                                       icon: 'error',
-                                      title: `Oooops! Nuestros servidores son una mierda`,
+                                      title: ModalMessages.ERROR_CONEXION,
                                       showConfirmButton: false,
                                       timer: 2500
                                     }) );
   };
 
-  public getName( firstName: string) {
-    return firstName
+
+  public hasError( fieldName: string ): boolean {
+    return hasFieldError(this.contactForm, fieldName)
   }
 
 };
