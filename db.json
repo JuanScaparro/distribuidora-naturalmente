@@ -8,21 +8,126 @@
     },
     {
       "id": "002",
-      "name": "Ojotas de seitan",
+      "name": "Ojotas de goma",
       "description": "Hoy mi vieja me regalo un par",
       "price": 3260.3
     },
     {
       "id": "003",
       "name": "lentes de sol",
-      "description": "Lindos lentes",
+      "description": "Lindos lentes para mirar",
       "price": 2345.8
+    },
+    {
+      "id": "004",
+      "name": "Alfajores de dulce de leche",
+      "description": "alfajores bañados en chocolate rellenos de dulce de leche",
+      "price": 456
+    },
+    {
+      "id": "005",
+      "name": "Remera manga corta Azul",
+      "description": "Remera azul con doble costura color naranja",
+      "price": 780
+    },
+    {
+      "id": "006",
+      "name": "Granola Mix",
+      "description": "Con mix de frutos secos y chispas de chocolate",
+      "price": 654.3
+    },
+    {
+      "id": "007",
+      "name": "James Bond",
+      "description": "Agente Bond... James Bond",
+      "price": 76.5
+    },
+    {
+      "id": "008",
+      "name": "Avión de papel",
+      "description": "Realizado en papel de diario de la mejor calidad",
+      "price": 1298
+    },
+    {
+      "id": "009",
+      "name": "Bicicleta Playera",
+      "description": "Rodado 26 sin frenos y las cubiertas gastadas",
+      "price": 9876
+    },
+    {
+      "id": "010",
+      "name": "Autito RC",
+      "description": "Sin pilas",
+      "price": 945.9
     }
   ],
   "customers": [
-    {}
+    {
+      "id": "001",
+      "firstName": "Rolando",
+      "lastName": "Gomez",
+      "email": "rolygomez@mail.com"
+    },
+    {
+      "id": "002",
+      "firstName": "Juan Carlos",
+      "lastName": "Gonzalez",
+      "email": "juancho@mail.com"
+    },
+    {
+      "id": "003",
+      "firstName": "Martin",
+      "lastName": "Ramirez",
+      "email": "martinr@mail.com"
+    },
+    {
+      "id": "004",
+      "firstName": "Alejandra",
+      "lastName": "Sanchez",
+      "email": "alesan@mail.com"
+    },
+    {
+      "id": "005",
+      "firstName": "Maria Antonieta",
+      "lastName": "De las Nieves",
+      "email": "chilindrina@mail.com"
+    }
   ],
   "providers": [
-    {}
+    {
+      "id": "001",
+      "company": "Caramelo Santo",
+      "contactName": "Pepe Martinez",
+      "phone": "1134235678",
+      "email": "pmartinez@caramelosanto.com"
+    },
+    {
+      "id": "002",
+      "company": "Ropa Sucia SRL",
+      "contactName": "Ramon Romano",
+      "phone": "2323456780",
+      "email": "romanoramon@mail.com"
+    },
+    {
+      "id": "003",
+      "company": "Aviones de Mentira",
+      "contactName": "Marta Gimenez",
+      "phone": "1167874534",
+      "email": "martag@aviones.com"
+    },
+    {
+      "id": "004",
+      "company": "Bicicleteria Rota",
+      "contactName": "Fernando Rota",
+      "phone": "1165789078",
+      "email": "rotafernando@rotabike.com"
+    },
+    {
+      "id": "005",
+      "company": "Optica Pirulo",
+      "contactName": "Mercedes Benz",
+      "phone": "2656453423",
+      "email": "mechabenz@laoptica.com"
+    }
   ]
 }
