@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../../services/products.service';
 
+type IProduct = {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+}
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -7,9 +14,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  constructor() { }
+  constructor(  private productsService: ProductsService ) { }
 
   ngOnInit(): void {
+    this.getProducts()
+  }
+
+  private getProducts(){
+    this.productsService.getProducts().then(res => console.log(res))
+  }
+
+  public addProduct(){
+    const payload: IProduct = {
+      id: '003',
+      name: 'lentes de sol',
+      description: 'Lindos lentes',
+      price: 2345.8
+    }
+    this.productsService.postProduct(payload).then( res => {
+      console.log(res)
+      this.getProducts()
+
+    })
   }
 
 }

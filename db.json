@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": "001",
+      "name": "Milanesas de soja",
+      "description": "Tengo que vender milas de soja",
+      "price": 123.5
+    },
+    {
+      "id": "002",
+      "name": "Ojotas de seitan",
+      "description": "Hoy mi vieja me regalo un par",
+      "price": 3260.3
+    },
+    {
+      "id": "003",
+      "name": "lentes de sol",
+      "description": "Lindos lentes",
+      "price": 2345.8
+    }
+  ],
+  "customers": [
+    {}
+  ],
+  "providers": [
+    {}
+  ]
+}
