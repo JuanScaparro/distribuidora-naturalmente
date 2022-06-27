@@ -31,4 +31,9 @@ export class CartService {
     const products = [...this.getProducts(), productPayload];
     this._setProducts(products);
   }
+
+  public deleteProduct(productPayload: IProductPayload): void {
+    const products = this.getProducts().filter( item => item.product.id !== productPayload.product.id )
+    this._setProducts(products);
+  }
 }

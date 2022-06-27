@@ -11,6 +11,7 @@ export class CartIconComponent implements OnInit {
 
   public quantity: number = 0
   private subscription$: Subscription = new Subscription()
+  
   constructor( private cartService: CartService ) { }
 
   ngOnInit(): void {
