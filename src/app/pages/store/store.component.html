@@ -2,27 +2,12 @@
   <div class="title-store">
     <h2>Naturalmente Tu Tienda!</h2>
   </div>
-  <div class="content">
-    <div class="card-body">
-      <img src="../../../assets/img/img-store.png" alt="">
-      <div class="card-text">
-        <h3>Title</h3>
-        <p>Description</p>
-        <p>Price</p>
-      </div>
-      <div class="select">
-        Cantidad: 
-        <select name="select" id="amount" class="amount">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">...</option>
-        </select>
-      </div>
-      <div class="button">
-        <button class="addToCartBtn">Agregar al carrito</button>    
-      </div>
-    </div>
-  </div>
+  
+  <ng-container class="product-list">
+    <app-product-item *ngFor="let product of products"
+    [product]="product"
+    (product-payload)="addProductToCart($event)"  
+    ></app-product-item>
+  </ng-container>
 </div>
 <!-- <button (click)="addProduct()">Agregar producto</button> -->

@@ -11,14 +11,21 @@ import { IProduct } from '../../interfaces/IProduct.interface';
 
 export class StoreComponent implements OnInit {
 
-  constructor(  private productsService: ProductsService ) { }
+  public products: IProduct[] = []
+
+  constructor(  private productsService: ProductsService ) {
+    
+  }
 
   ngOnInit(): void {
     this.getProducts()
   }
 
   private getProducts(){
-    this.productsService.getProducts().then(res => console.log(res))
+    this.productsService.getProducts().then(res => {
+      console.log(res)
+      this.products = res
+    })
   }
 
   public addProduct(){
@@ -28,10 +35,15 @@ export class StoreComponent implements OnInit {
       description: 'Lindos lentes',
       price: 2345.8
     }
+
     this.productsService.postProduct(payload).then( res => {
       console.log(res)
       this.getProducts()
-
     })
   }
+
+  public addProductToCart(productPayload: any) {
+    console.log(productPayload)
+  }
+  
 }

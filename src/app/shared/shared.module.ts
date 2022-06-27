@@ -15,6 +15,7 @@ import { StoreComponent } from '../pages/store/store.component';
 import { RecipesComponent } from '../pages/recipes/recipes.component';
 import { CartComponent } from '../pages/cart/cart.component';
 import { LoginComponent } from '../pages/login/login.component';
+import { CounterComponent } from './counter/counter.component';
 
 // SERVICES
 
@@ -51,7 +52,8 @@ const routes: Routes = [
   declarations: [
     HeaderComponent,
     FooterComponent,
-    FormContactComponent
+    FormContactComponent,
+    CounterComponent
   ],
   imports: [
     CommonModule,
@@ -61,7 +63,8 @@ const routes: Routes = [
   exports: [
     HeaderComponent,
     FooterComponent,
-    FormContactComponent
+    FormContactComponent,
+    CounterComponent
   ]
 })
 export class SharedModule { }

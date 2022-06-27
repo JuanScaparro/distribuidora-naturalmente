@@ -14,6 +14,7 @@ import { StoreComponent } from './pages/store/store.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProductItemComponent } from './pages/store/components/product-item/product-item.component';
 
 // SERVICES
 
@@ -54,7 +55,8 @@ const routes: Routes = [
     StoreComponent,
     RecipesComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
