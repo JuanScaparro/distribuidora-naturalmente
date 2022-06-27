@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IProduct } from '../../../../interfaces/IProduct.interface';
+import { IProductPayload } from '../../../../interfaces/IProductPayload.interface';
 
 @Component({
   selector: 'app-product-item',
@@ -9,7 +10,7 @@ import { IProduct } from '../../../../interfaces/IProduct.interface';
 export class ProductItemComponent implements OnInit {
 
   @Input('product') product: IProduct = {}
-  @Output('product-payload') payloadEmitter: EventEmitter<any> = new EventEmitter<any>()
+  @Output('product-payload') payloadEmitter: EventEmitter<IProductPayload> = new EventEmitter<IProductPayload>()
 
   public quantity: number = 1
 
@@ -24,7 +25,7 @@ export class ProductItemComponent implements OnInit {
   }
 
   public setProduct( ) {
-    const payload: any = {
+    const payload: IProductPayload = {
       product: this.product,
       quantity: this.quantity
     }

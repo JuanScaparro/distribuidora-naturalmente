@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 
 import { IProduct } from '../../interfaces/IProduct.interface';
+import { IProductPayload } from "../../interfaces/IProductPayload.interface"
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-store',
@@ -13,7 +15,10 @@ export class StoreComponent implements OnInit {
 
   public products: IProduct[] = []
 
-  constructor(  private productsService: ProductsService ) {
+  constructor( 
+    private productsService: ProductsService,
+    private cartService: CartService
+    ) {
     
   }
 
@@ -28,7 +33,16 @@ export class StoreComponent implements OnInit {
     })
   }
 
-  public addProduct(){
+  public addProductToCart(productPayload: IProductPayload) {
+    
+    this.cartService.addProduct(productPayload)
+  }
+  
+}
+
+
+/**
+ * public addProduct(){
     const payload: IProduct = {
       id: '003',
       name: 'lentes de sol',
@@ -41,9 +55,4 @@ export class StoreComponent implements OnInit {
       this.getProducts()
     })
   }
-
-  public addProductToCart(productPayload: any) {
-    console.log(productPayload)
-  }
-  
-}
+ */
