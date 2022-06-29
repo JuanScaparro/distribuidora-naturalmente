@@ -1,3 +1,5 @@
-<button (click)="setSelectedCount(counter - 1)">-</button>
-<p>{{ counter }}</p>
-<button (click)="setSelectedCount(counter + 1)">+</button>
+<div class="container">
+  <button (click)="setSelectedCount(counter - 1)" class="minus-btn"><i class="fa-solid fa-minus"></i></button>
+  <p class="p-counter">{{ counter }}</p>
+  <button (click)="setSelectedCount(counter + 1)" class="plus-btn"><i class="fa-solid fa-plus"></i></button>
+</div>

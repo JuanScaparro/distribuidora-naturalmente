@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.minus-btn, .plus-btn {
+  border: none;
+  background: none;
+}
+
+.p-counter {
+  margin: 0px 3px 0px 3px;
+}
