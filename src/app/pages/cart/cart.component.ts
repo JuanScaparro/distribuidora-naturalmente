@@ -1,7 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { CartService } from '../../services/cart.service';
+
 import { IProductPayload } from '../../interfaces/IProductPayload.interface';
 import { Subscription } from 'rxjs';
+
+import { CartLabelTable } from '../../utils/constants';
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +17,11 @@ export class CartComponent implements OnInit, OnDestroy {
   public products: IProductPayload[] = [];
   private subscription$: Subscription = new Subscription()
 
-  constructor( private cartService: CartService ) { }
+  public cartLabelTable: any;
+
+  constructor( private cartService: CartService ) {
+    this.cartLabelTable = CartLabelTable
+  }
 
   ngOnInit(): void {
     this.getCart()

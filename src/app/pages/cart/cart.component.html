@@ -1,3 +1,33 @@
-<div *ngFor="let item of products">
-  <p>{{item.product.name}} | <span>{{item.quantity}}   </span> <button class="btn btn-danger" (click)="deleteProduct(item)">Eliminar producto</button></p>
+<div class="container">
+  <div class="cart-message">
+    <h2>Carrito de Compras</h2>
+    <div class="message" *ngIf="products.length === 0">
+      <p>Tu carrito momentáneamente se encuentra vacío</p>
+      <p>Pasá por la <a routerLink="/tienda">Tienda</a>, te estamos esperando!</p>
+    </div>
+  </div>
+  <table class="table" *ngIf="products.length !== 0">
+    <thead>
+      <tr>
+        <th scope="col">{{ cartLabelTable.ID }}</th>
+        <th scope="col">{{ cartLabelTable.NAME }}</th>
+        <th scope="col">{{ cartLabelTable.AMOUNT }}</th>
+        <th scope="col">{{ cartLabelTable.PRICE }}</th>
+        <th scope="col">{{ cartLabelTable.DELETE}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of products">
+        <td>{{ item.product.id }}</td>
+        <td>{{ item.product.name }}</td>
+        <app-counter>
+          <td>{{ item.quantity }}</td>
+        </app-counter>
+        <td>{{ item.product.price }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteProduct(item)"><i class="fa-solid fa-trash-can"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

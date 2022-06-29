@@ -17,3 +17,11 @@ export enum ModalMessages {
   ERROR_VALIDATION = 'Oooops! lo lamentamos, completa todos los campos e intentalo nuevamente!',
   ERROR_CONEXION = 'Oooops! Nuestros servidores son una mierda',
 }
+
+export enum CartLabelTable {
+  ID = 'Id N°',
+  NAME = 'Producto',
+  AMOUNT = 'Cantidad',
+  PRICE = 'Precio',
+  DELETE = 'Eliminar'
+}
