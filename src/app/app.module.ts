@@ -15,6 +15,7 @@ import { RecipesComponent } from './pages/recipes/recipes.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProductItemComponent } from './pages/store/components/product-item/product-item.component';
+import { CardRecipeComponent } from './pages/recipes/components/card-recipe/card-recipe.component';
 
 // SERVICES
 
@@ -56,7 +57,8 @@ const routes: Routes = [
     RecipesComponent,
     CartComponent,
     LoginComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    CardRecipeComponent
   ],
   imports: [
     BrowserModule,

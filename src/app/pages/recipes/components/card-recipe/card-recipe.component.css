@@ -1,0 +1,20 @@
+.card-body {
+  font-size: 25px;
+}
+
+.title-recipe {
+  font-size: 45px;
+  margin-top: 15px;
+}
+
+.ingredients-title {
+  margin-top: 30px;
+}
+
+.ingredients {
+  list-style: none;
+}
+
+.description-title {
+  margin: 30px;
+}
