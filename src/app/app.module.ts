@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 // MODULES
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -64,6 +65,7 @@ const routes: Routes = [
     BrowserModule,
     SharedModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot( routes )
   ],
   providers: [],

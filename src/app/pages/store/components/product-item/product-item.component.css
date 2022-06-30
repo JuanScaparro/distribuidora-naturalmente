@@ -1,6 +1,6 @@
 /*CARD*/
 .card-container {
-  width: 250px;
+  width: 450px;
   padding: 50px;
   margin: auto;
   text-align: center;
@@ -17,7 +17,11 @@
 .card-text {
   margin-top: 10px;
   padding-top: 10px;
+  font-size: 1.5rem;
   border-top: 1.5px solid green;
+}
+.card-text h3 {
+  font-size: 40px;
 }
 .card-img {
   width: 200px;
@@ -30,10 +34,11 @@
   background-color: green;
   border: green;
   color: #ebe5e5;
-  padding: 5px;
+  padding: 10px;
+  font-size: 1.3rem;
 }
 .addToCartBtn:hover {
-  transition: 2s;
+  transition: 0.8s;
   background-color: #5ab102;
   color: #5e5b5b;
 }

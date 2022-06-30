@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 import { IProduct } from '../../../../interfaces/IProduct.interface';
 import { IProductPayload } from '../../../../interfaces/IProductPayload.interface';
 
@@ -9,27 +10,27 @@ import { IProductPayload } from '../../../../interfaces/IProductPayload.interfac
 })
 export class ProductItemComponent implements OnInit {
 
-  @Input('product') product: IProduct = {}
-  @Output('product-payload') payloadEmitter: EventEmitter<IProductPayload> = new EventEmitter<IProductPayload>()
+  @Input('product') product: IProduct = {};
+  @Output('product-payload') payloadEmitter: EventEmitter<IProductPayload> = new EventEmitter<IProductPayload>();
 
-  public quantity: number = 1
+  public quantity: number = 1;
 
-  constructor() { }
+  constructor() {};
 
   ngOnInit(): void {
-  }
+  };
 
-  public setSelectedQuantity(selectedQuantity: number) {
-    this.quantity = selectedQuantity 
-    console.log(this.quantity)
-  }
+  public setSelectedQuantity( selectedQuantity: number ) {
+    this.quantity = selectedQuantity; 
+  };
 
-  public setProduct( ) {
+  public setProduct() {
     const payload: IProductPayload = {
       product: this.product,
       quantity: this.quantity
-    }
+    };
 
-    this.payloadEmitter.emit(payload)
-  }
-}
+    this.payloadEmitter.emit( payload );
+  };
+
+};

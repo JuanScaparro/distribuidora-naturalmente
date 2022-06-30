@@ -3,11 +3,11 @@
     <h2>Naturalmente Tu Tienda!</h2>
   </div>
   
-  <ng-container class="product-list">
+  <div class="container">
     <app-product-item *ngFor="let product of products"
     [product]="product"
     (product-payload)="addProductToCart($event)"  
     ></app-product-item>
-  </ng-container>
+  </div>
 </div>
 <!-- <button (click)="addProduct()">Agregar producto</button> -->

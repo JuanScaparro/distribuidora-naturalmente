@@ -3,5 +3,8 @@
     <h2>Recetas</h2>
     <p>Para una mejor alimentacion... NATURALMENTE</p>
   </div>
-  <app-card-recipe></app-card-recipe>
+  <div class="container">
+    <app-card-recipe class="cardRecipe" *ngFor="let recipe of recipes"
+    [recipe]="recipe"></app-card-recipe>
+  </div>
 </div>

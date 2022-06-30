@@ -15,29 +15,28 @@ import { CartLabelTable } from '../../utils/constants';
 export class CartComponent implements OnInit, OnDestroy {
 
   public products: IProductPayload[] = [];
-  private subscription$: Subscription = new Subscription()
+  private subscription$: Subscription = new Subscription();
 
   public cartLabelTable: any;
 
   constructor( private cartService: CartService ) {
-    this.cartLabelTable = CartLabelTable
-  }
+    this.cartLabelTable = CartLabelTable;
+  };
 
   ngOnInit(): void {
-    this.getCart()
-  }
+    this.getCart();
+  };
 
   ngOnDestroy(): void {
-    this.subscription$.unsubscribe()
-  }
+    this.subscription$.unsubscribe();
+  };
 
   private getCart() {
-    this.subscription$ = this.cartService.products$.subscribe(products => this.products = products)
-  }
+    this.subscription$ = this.cartService.products$.subscribe( products => this.products = products );
+  };
 
   public deleteProduct(product: IProductPayload){
-    this.cartService.deleteProduct(product)
-  }
+    this.cartService.deleteProduct( product );
+  };
 
-
-}
+};

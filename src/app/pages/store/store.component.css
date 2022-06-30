@@ -1,13 +1,13 @@
 .background-store {
   width: 100%;
   background-image: url(../../../assets/img/bg-store.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h2 {
   font-size: 5rem;
 }
-
-
 
 .title-store {
   text-align: center;
@@ -15,12 +15,14 @@ h2 {
   font-family: 'Caveat', cursive;
 }
 
-
-
-
 select {
   background-color: #ebe5e5;
   border-radius: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 
