@@ -24,7 +24,7 @@
   font-size: 40px;
 }
 .card-img {
-  width: 200px;
+  width: 400px;
 }
 .button {
   margin-top: 10px;
@@ -41,5 +41,13 @@
   transition: 0.8s;
   background-color: #5ab102;
   color: #5e5b5b;
+}
+
+.select {
+  font-size: 1.3rem;
+}
+
+.price {
+  font-weight: bold;
 }
 /*END CARD*/

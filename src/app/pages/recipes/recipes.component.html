@@ -1,7 +1,7 @@
 <div class="background-recipe">
   <div class="recipes-title">
-    <h2>Recetas</h2>
-    <p>Para una mejor alimentacion... NATURALMENTE</p>
+    <h2>{{ recipesTitle.TITLE }}</h2>
+    <p>{{ recipesTitle.SUB_TITLE }}</p>
   </div>
   <div class="container">
     <app-card-recipe class="cardRecipe" *ngFor="let recipe of recipes"

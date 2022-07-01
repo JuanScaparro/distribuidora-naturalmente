@@ -4,11 +4,11 @@
     <div class="card-body">
       <h3 class="title-recipe">{{ recipe.title }}</h3>
       <div>
-        <p class="ingredients-title"><i class="fa-solid fa-arrow-right-long"></i> Que nesecito?</p>
+        <p class="ingredients-title"><i class="fa-solid fa-arrow-right-long"></i>{{ cardRecipeMessage.SUB_TITLE_ONE }}</p>
         <p class="ingredients"><i class="fa-solid fa-check"></i> {{ recipe.ingredientsList }}</p>
       </div>
       <div>
-        <p class="description-title"><i class="fa-solid fa-arrow-right-long"></i> Como lo hacemos?</p>
+        <p class="description-title"><i class="fa-solid fa-arrow-right-long"></i>{{ cardRecipeMessage.SUB_TITLE_TWO }}</p>
         <p class="card-text">{{ recipe.method }}</p>
       </div>
     </div>

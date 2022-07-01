@@ -2,6 +2,8 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { IProduct } from '../../../../interfaces/IProduct.interface';
 import { IProductPayload } from '../../../../interfaces/IProductPayload.interface';
+import { ProductItem } from '../../../../utils/constants';
+import { Currency } from 'src/app/utils/constants';
 
 @Component({
   selector: 'app-product-item',
@@ -14,14 +16,20 @@ export class ProductItemComponent implements OnInit {
   @Output('product-payload') payloadEmitter: EventEmitter<IProductPayload> = new EventEmitter<IProductPayload>();
 
   public quantity: number = 1;
+  public productItem: any;
+  public currency: any;
 
-  constructor() {};
+
+  constructor() {
+    this.currency = Currency;
+    this.productItem = ProductItem;
+  };
 
   ngOnInit(): void {
   };
 
   public setSelectedQuantity( selectedQuantity: number ) {
-    this.quantity = selectedQuantity; 
+    this.quantity = selectedQuantity;
   };
 
   public setProduct() {

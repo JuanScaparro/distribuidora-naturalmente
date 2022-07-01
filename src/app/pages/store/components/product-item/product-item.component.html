@@ -1,19 +1,19 @@
 <div class="card-container">
   <div class="card-body">
-    <img class="card-img" src="/assets/img/img-store.png" alt="">
+    <img class="card-img" src="/assets/img/store-img/img-store.png" alt="">
     <div class="card-text">
       <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>
-      <p>$ {{ product.price }}</p>
+      <p class="price">{{ currency.PESO }} {{ product.price }}</p>
     </div>
     <div class="select">
-      Cantidad: 
+      {{ productItem.QUANTITY }} 
       <app-counter
       [max-count]="5"
       (selected-count)="setSelectedQuantity($event)"></app-counter>
     </div>
     <div class="button">
-      <button class="addToCartBtn" (click)="setProduct()">Agregar al carrito</button>    
+      <button class="addToCartBtn" (click)="setProduct()">{{ productItem.BTN_MESSAGE }}</button>    
     </div>
   </div>
 </div>

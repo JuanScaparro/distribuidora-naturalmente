@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CardRecipeMessage } from '../../../../utils/constants';
 
 @Component({
   selector: 'app-card-recipe',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardRecipeComponent implements OnInit {
 
+  public cardRecipeMessage: any;
+
   @Input() recipe: any;
 
-  constructor() { }
+  constructor() {
+    this.cardRecipeMessage = CardRecipeMessage;
+  }
 
   ngOnInit(): void {
   }

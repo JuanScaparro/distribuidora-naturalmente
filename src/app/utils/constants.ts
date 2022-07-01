@@ -10,6 +10,7 @@ export enum FieldLabels {
   LASTNAME = 'Apellido',
   EMAIL = 'Email',
   MESSAGE = 'Mensaje',
+  BTN_SUBMIT = 'Enviar',
  }
 
 export enum ModalMessages {
@@ -23,5 +24,25 @@ export enum CartLabelTable {
   NAME = 'Producto',
   AMOUNT = 'Cantidad',
   PRICE = 'Precio',
-  DELETE = 'Eliminar'
+  DELETE = 'Eliminar',
+}
+
+export enum ProductItem {
+  QUANTITY = 'Cantidad:',
+  BTN_MESSAGE = 'Agregar al carrito', 
+}
+
+export enum Currency {
+  PESO = '$',
+  DOLLAR = 'U$S',
+}
+
+export enum RecipesTitle {
+  TITLE = 'Recetas',
+  SUB_TITLE = 'Para una mejor alimentacion... NATURALMENTE',
+}
+
+export enum CardRecipeMessage {
+  SUB_TITLE_ONE = ' Que nesecito?',
+  SUB_TITLE_TWO = ' Como lo hacemos?',
 }
