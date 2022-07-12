@@ -1,6 +1,7 @@
 export interface IRecipe {
-  img: string;
-  title: string;
-  ingredientsList: string;
-  method: string;
+  id?: string;
+  img?: string;
+  title?: string;
+  ingredientsList?: string;
+  method?: string;
 }

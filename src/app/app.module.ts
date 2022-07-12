@@ -17,6 +17,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProductItemComponent } from './pages/store/components/product-item/product-item.component';
 import { CardRecipeComponent } from './pages/recipes/components/card-recipe/card-recipe.component';
+import { SignUpComponent } from './pages/login/components/sign-up/sign-up.component';
 
 // SERVICES
 
@@ -59,7 +60,8 @@ const routes: Routes = [
     CartComponent,
     LoginComponent,
     ProductItemComponent,
-    CardRecipeComponent
+    CardRecipeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

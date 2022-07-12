@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { RecipesService } from '../../services/recipes.service';
-
 import { Subscription } from 'rxjs';
+
+import { RecipesService } from '../../services/recipes.service';
 
 import { IRecipe } from '../../interfaces/IRecipe.interface';
 
 import { RecipesTitle } from '../../utils/constants';
+
 
 @Component({
   selector: 'app-recipes',
@@ -15,26 +16,30 @@ import { RecipesTitle } from '../../utils/constants';
 })
 export class RecipesComponent implements OnInit {
 
-  private recipe$ : Subscription;
+  private recipesSubscription$ : Subscription;
   public recipes: IRecipe[] = []
 
   public recipesTitle: any;
 
   constructor( private recipesService: RecipesService ) {
-    this.recipe$ = new Subscription;
+    this.recipesSubscription$ = new Subscription;
     this.recipesTitle = RecipesTitle;
   }
 
   ngOnInit(): void {
-    this.recipe$ = this.recipesService.getRecipes().subscribe( data => this.getRecipe( data ) )
+
+
+    this.recipesSubscription$ = this.recipesService.getRecipes()
+                      .subscribe( 
+                        (recipes: IRecipe[]) => this.recipes =  recipes 
+                      )
+
   }
 
   ngOnDestroy(): void {
-    this.recipe$.unsubscribe();
+    this.recipesSubscription$.unsubscribe();
   };
 
-  public getRecipe( data: any ) {
-    this.recipes = data
-  }
+ 
 
 }

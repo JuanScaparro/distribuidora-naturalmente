@@ -3,4 +3,9 @@
   margin: 20px auto 20px auto;
   padding: 50px;
   background-color: #c4bdbd;
+  font-size: 1.5rem;
+}
+
+.btn-login {
+  font-size: 1.5rem;
 }
