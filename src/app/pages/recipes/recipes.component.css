@@ -3,24 +3,25 @@
   background-image: url(/assets/img/bg-store.png);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 60px;
+  padding: 20px;
 }
 
 .recipes-title {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .recipes-title h2 {
-  font-size: 80px;
+  font-size: 50px;
 }
 
 .recipes-title p {
-  font-size: 40px;
+  font-size: 25px;
 }
 
-.container {
-  width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.cardRecipe {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

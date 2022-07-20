@@ -26,15 +26,15 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.recipe$ = this.recipesService.getRecipes().subscribe( data => this.getRecipe( data ) )
+    this.recipe$ = this.recipesService.getRecipes().subscribe( recipes => this.setRecipes( recipes ) )
   }
 
   ngOnDestroy(): void {
     this.recipe$.unsubscribe();
   };
 
-  public getRecipe( data: any ) {
-    this.recipes = data
+  private setRecipes( recipes: any ) {
+    this.recipes = recipes;
   }
 
 }

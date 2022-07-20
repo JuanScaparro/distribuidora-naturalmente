@@ -1,25 +1,25 @@
-.container {
-  margin: 20px;
-}
-
 .card-body {
-  font-size: 25px;
-  padding: 20px;
+  font-size: 1.2rem;
+  padding: 10px;
 }
 
 .title-recipe {
-  font-size: 45px;
-  margin-top: 15px;
+  font-size: 2rem;
+  margin-top: 10px;
 }
 
-.ingredients-title {
-  margin-top: 30px;
+.content-info {
+  font-size: 1.3rem;
 }
 
-.ingredients {
-  list-style: none;
+.time-dif {
+  margin-top: 10px;
 }
 
-.description-title {
-  margin: 30px;
+.short-info {
+  margin: 10px, 0px, 10px, 0px;
+}
+
+.btnView {
+  font-size: 1.2rem;
 }
