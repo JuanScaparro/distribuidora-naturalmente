@@ -10,19 +10,19 @@
     <div class="collapse navbar-collapse content-buttons" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-md-12 d-flex justify-content-end nav-style">
         <li class="nav-item">
-          <a class="nav-link nav-style" aria-current="page" routerLink="/">Inicio</a>
+          <a class="nav-link nav-style" aria-current="page" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-style" routerLink="/recetas">Recetas</a>
+          <a class="nav-link nav-style" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/recetas">Recetas</a>
         </li>
         <li class="nav-item dropdown nav-style">
-          <a class="nav-link dropdown-toggle nav-style" routerLink="/login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle nav-style" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/login" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Login
           </a>
           <ul class="dropdown-menu nav-style" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item nav-style" routerLink="/tienda">Tienda</a></li>
+            <li><a class="dropdown-item nav-style" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/tienda">Tienda</a></li>
             <li><hr class="dropdown-divider nav-style"></li>
-            <li><a class="dropdown-item nav-style" routerLink="/carrito">Carrito</a></li>
+            <li><a class="dropdown-item nav-style" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/carrito">Carrito</a></li>
           </ul>
         </li>
       </ul>

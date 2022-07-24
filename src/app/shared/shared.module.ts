@@ -17,6 +17,7 @@ import { CartComponent } from '../pages/cart/cart.component';
 import { LoginComponent } from '../pages/login/login.component';
 import { CounterComponent } from './counter/counter.component';
 import { CartIconComponent } from './cart-icon/cart-icon.component';
+import { FullRecipeComponent } from '../pages/full-recipe/full-recipe.component';
 
 // SERVICES
 
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'recetas',
     component: RecipesComponent
+  },
+  {
+    path: 'receta/:id',
+    component: FullRecipeComponent
   },
   {
     path: 'login',

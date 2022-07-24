@@ -1,0 +1,20 @@
+.background-recipe {
+  width: 100%;
+  background-image: url(/assets/img/bg-store.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.title-recipe {
+  font-size: 3rem;
+}
+
+.content-info .info {
+  font-size: 1.3rem;
+}
+
+.time-info {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}

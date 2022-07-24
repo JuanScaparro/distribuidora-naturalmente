@@ -1,0 +1,21 @@
+<div class="background-recipe">
+  <ng-container *ngIf="isRecipeLoaded">
+    <div class="container d-flex justify-content-center m-5">
+      <div class="card text-center" style="width: 40rem;">
+        <img src={{getRecipe().img}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2 class="title-recipe">{{ getRecipe().title }}</h2>
+          <div class="content-info">
+            <div class="time-info"><i class="fa-regular fa-clock"></i> {{ getRecipe().time }} - <i class="fa-solid fa-check"></i> {{ getRecipe().dificult }}</div>
+            <div class="info">
+              <p>{{ getRecipe().ingredientsList }}</p>
+              <p>{{ getRecipe().preparation }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+
