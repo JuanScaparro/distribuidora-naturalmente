@@ -19,4 +19,5 @@ export class RecipesService {
   public getRecipe(id: number): Observable<IRecipe> {
     return this.http.get(`${this.url}/${id}`) as Observable<IRecipe>;
   }
+ }
 }
