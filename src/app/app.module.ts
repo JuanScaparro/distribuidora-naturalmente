@@ -18,43 +18,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { ProductItemComponent } from './pages/store/components/product-item/product-item.component';
 import { CardRecipeComponent } from './pages/recipes/components/card-recipe/card-recipe.component';
 import { FullRecipeComponent } from './pages/full-recipe/full-recipe.component';
+import { RoutesModule } from './routes.module';
 
 // SERVICES
 
 
-// PIPES
-
-
-const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'recetas',
-    component: RecipesComponent
-  },
-  {
-    path: 'receta/:id',
-    component: FullRecipeComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'tienda',
-    component: StoreComponent
-  },
-  {
-    path: 'carrito',
-    component: CartComponent
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
-]
 
 @NgModule({
   declarations: [
@@ -72,7 +40,7 @@ const routes: Routes = [
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot( routes )
+    RoutesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
