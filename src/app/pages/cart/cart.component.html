@@ -1,31 +1,64 @@
 <div class="container">
+
   <div class="cart-message">
     <h2>Carrito de Compras</h2>
-    <div class="message" *ngIf="products.length === 0">
-      <p>Tu carrito momentáneamente se encuentra vacío</p>
-      <p>Pasá por la <a routerLink="/tienda">Tienda</a>, te estamos esperando!</p>
+
+    <ng-container *ngIf="!products.length; else withProducts">
+      <div class="message">
+        <p>Tu carrito momentáneamente se encuentra vacío</p>
+        <p>
+          Pasá por la <a routerLink="/tienda">Tienda</a>, te estamos esperando!
+        </p>
+      </div>
+    </ng-container>
+
+    <ng-template #withProducts>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">{{ cartLabelTable.ID }}</th>
+            <th scope="col">{{ cartLabelTable.NAME }}</th>
+            <th scope="col">{{ cartLabelTable.AMOUNT }}</th>
+            <th scope="col">{{ cartLabelTable.PRICE }}</th>
+            <th scope="col">{{ cartLabelTable.DELETE }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of products">
+            <td>{{ item.product.id }}</td>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.price }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteProduct(item)">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+
+  </div>
+
+</div>
+
+
+<div #modal class="modal" tabindex="-1">
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
-  <table class="table" *ngIf="products.length !== 0">
-    <thead>
-      <tr>
-        <th scope="col">{{ cartLabelTable.ID }}</th>
-        <th scope="col">{{ cartLabelTable.NAME }}</th>
-        <th scope="col">{{ cartLabelTable.AMOUNT }}</th>
-        <th scope="col">{{ cartLabelTable.PRICE }}</th>
-        <th scope="col">{{ cartLabelTable.DELETE}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr  *ngFor="let item of products">
-        <td>{{ item.product.id }}</td>
-        <td>{{ item.product.name }}</td>
-        <td>{{ item.quantity }}</td>
-        <td>{{ item.product.price }}</td>
-        <td>
-          <button class="btn btn-danger" (click)="deleteProduct(item)"><i class="fa-solid fa-trash-can"></i></button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

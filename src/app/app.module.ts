@@ -19,6 +19,7 @@ import { ProductItemComponent } from './pages/store/components/product-item/prod
 import { CardRecipeComponent } from './pages/recipes/components/card-recipe/card-recipe.component';
 import { FullRecipeComponent } from './pages/full-recipe/full-recipe.component';
 import { RoutesModule } from './routes.module';
+import { SignUpComponent } from './pages/login/components/sign-up/sign-up.component';
 
 // SERVICES
 
@@ -33,7 +34,8 @@ import { RoutesModule } from './routes.module';
     LoginComponent,
     ProductItemComponent,
     CardRecipeComponent,
-    FullRecipeComponent
+    FullRecipeComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
