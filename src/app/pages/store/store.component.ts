@@ -28,7 +28,6 @@ export class StoreComponent implements OnInit {
 
   private getProducts(){
     this.productsService.getProducts().then(res => {
-      console.log(res)
       this.products = res
     })
   }

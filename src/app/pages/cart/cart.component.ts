@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, AfterViewInit , ViewChild, ElementRef } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { CartService } from '../../services/cart.service';
 
@@ -13,12 +13,7 @@ import { CartLabelTable } from '../../utils/constants';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit, OnDestroy, AfterViewInit {
-
-
-  @ViewChild('modal') theModal: ElementRef = new ElementRef(null)
-
-
+export class CartComponent implements OnInit, OnDestroy {
 
   public products: IProductPayload[] = [];
   private subscription$: Subscription = new Subscription();
@@ -32,14 +27,6 @@ export class CartComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     this.getCart();
   };
-
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      console.log(this.theModal)
-      this.theModal.nativeElement.classList.remove("modal")
-    });
-  }
-
 
   ngOnDestroy(): void {
     this.subscription$.unsubscribe();
