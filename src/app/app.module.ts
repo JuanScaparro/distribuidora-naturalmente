@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { StoreComponent } from './pages/store/store.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { CartComponent } from './pages/cart/cart.component';
@@ -19,7 +18,6 @@ import { ProductItemComponent } from './pages/store/components/product-item/prod
 import { CardRecipeComponent } from './pages/recipes/components/card-recipe/card-recipe.component';
 import { FullRecipeComponent } from './pages/full-recipe/full-recipe.component';
 import { RoutesModule } from './routes.module';
-import { SignUpComponent } from './pages/login/components/sign-up/sign-up.component';
 
 // SERVICES
 
@@ -34,8 +32,7 @@ import { SignUpComponent } from './pages/login/components/sign-up/sign-up.compon
     LoginComponent,
     ProductItemComponent,
     CardRecipeComponent,
-    FullRecipeComponent,
-    SignUpComponent
+    FullRecipeComponent
   ],
   imports: [
     BrowserModule,
