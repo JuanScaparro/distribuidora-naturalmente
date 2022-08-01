@@ -71,7 +71,6 @@ export class FormContactComponent implements OnInit {
                                     }) );
   };
 
-
   public hasError( fieldName: string ): boolean {
     return hasFieldError(this.contactForm, fieldName)
   }

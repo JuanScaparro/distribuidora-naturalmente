@@ -1,21 +1,17 @@
 <ng-container *ngIf="isLogIn; else signUp">
   <div class="container">
     <h2>Logueate:</h2>
-    <form>
+    <form [formGroup]="logInGroup" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="emailLogin" class="form-label">Email</label>
-        <input type="email" class="form-control" id="emailLogin">
+        <input type="email" class="form-control" id="emailLogin" formControlName="emailLogin">
       </div>
       <div class="mb-3">
         <label for="passwordLogin" class="form-label">Password</label>
-        <input type="password" class="form-control" id="passwordLogin" aria-describedby="passwordHelp">
+        <input type="password" class="form-control" id="passwordLogin" aria-describedby="passwordHelp" formControlName="passwordLogin">
         <div id="passwordHelp" class="form-text">No compartas tu clave con nadie.</div>
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="checkLogin">
-        <label class="form-check-label" for="checkLogin">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary btn-login">Ingresar</button>
+      <button type="submit" class="btn btn-primary btn-login" [disabled]="!logInGroup.valid">Ingresar</button>
     </form>
     <p class="mt-3">Si no estas registrado, por favor ingresá <button (click)="isLogIn = false">aquí</button></p>
   </div>
@@ -24,28 +20,24 @@
 <ng-template #signUp>
   <div class="container">
     <h2>Registrate:</h2>
-    <form>
+    <form [formGroup]="signUpGroup" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <label for="firstNameRegister" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="firstNameRegister">
+        <input type="text" class="form-control" id="firstNameRegister" formControlName="firstNameRegister">
       </div>
       <div class="mb-3">
         <label for="lastNameRegister" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="lastNameRegister">
+        <input type="text" class="form-control" id="lastNameRegister" formControlName="lastNameRegister">
       </div>
       <div class="mb-3">
         <label for="emailRegister" class="form-label">Email</label>
-        <input type="email" class="form-control" id="emailRegister">
+        <input type="email" class="form-control" id="emailRegister" formControlName="emailRegister">
       </div>
       <div class="mb-3">
         <label for="passwordRegister" class="form-label">Password</label>
-        <input type="password" class="form-control" id="passwordRegister">
+        <input type="password" class="form-control" id="passwordRegister" formControlName="passwordRegister">
       </div>
-      <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="checkRegister">
-        <label class="form-check-label" for="checkRegister">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary btn-login">Ingresar</button>
+      <button type="submit" class="btn btn-primary btn-login" [disabled]="!signUpGroup.valid">Ingresar</button>
     </form>
     <p class="mt-3">Si ya estas registrado, por favor ingresá <button (click)="isLogIn = true">aquí</button></p>
   </div>
