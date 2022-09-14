@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if(this.isLogIn) {
-      console.log(this.logInGroup.value)
+      console.log('LogIn =>', this.logInGroup.value)
       this.logInGroup.reset()
     } else {
-      console.log(this.signUpGroup.value)
+      console.log('SignUp =>', this.signUpGroup.value)
       this.signUpGroup.reset()
     }
   }

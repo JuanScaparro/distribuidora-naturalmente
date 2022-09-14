@@ -7,12 +7,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 // COMPONENTS
-import { HomeComponent } from './pages/home/home.component';
-import { StoreComponent } from './pages/store/store.component';
-import { RecipesComponent } from './pages/recipes/recipes.component';
 import { CartComponent } from './pages/cart/cart.component';
-import { LoginComponent } from './pages/login/login.component';
 import { FullRecipeComponent } from './pages/full-recipe/full-recipe.component';
+import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RecipesComponent } from './pages/recipes/recipes.component';
+import { StoreComponent } from './pages/store/store.component';
 
 // SERVICES
 
